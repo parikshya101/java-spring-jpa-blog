@@ -6,5 +6,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+import com.pluralsight.blog.model.Category;
+
 @Component
-public interface PostRepository extends JpaRepository<Post, Long> {}
+public interface PostRepository extends JpaRepository<Post, Long> {
+
+    List<Post> findByCategory(Category category);
+}
